@@ -1,0 +1,19 @@
+
+set $prism_host https://${PRISM_HOST}:${PRISM_PORT};
+
+location @prism {
+    proxy_pass $prism_host;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_set_header Host $host;
+}
+
+location / {
+    proxy_pass $prism_host;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_set_header Host $host;
+}
+

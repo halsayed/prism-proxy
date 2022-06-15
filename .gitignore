@@ -122,3 +122,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# custom ignores
+ssl/
+LOGS/
+.env
